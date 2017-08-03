@@ -1,0 +1,41 @@
+
+<div class="container">
+	<h2 class = "page-heasder">Add Course </h2>
+	<form (submit)= "addCourse()">
+		<div class = "form-group">
+			<label>Course Name </label>
+			<input type="text" [(ngModel)] = "course_name" name = "course_name" class ="form-control"/>
+		</div>
+		<div class = "form-group">
+			<label>Start Time </label>
+			<input type="text" [(ngModel)] = "start_time" name = "start_time" class ="form-control"/>
+		</div>
+		<div class = "form-group">
+			<label>End Time</label>
+			<input type="text" [(ngModel)] = "end_time" name = "end_time" class ="form-control"/>
+		</div>
+		<input type = "submit" class ="btn btn-success" value ="Add"/>
+	</form>
+</div>
+    <div ng-app = "" class="contianer-fluid" *ngFor = "let c of courses">
+    	<div class = "row">
+	 		<div class = "col-md-3">
+	 			{{c.teacher_name}}
+	 		</div>
+	 		<div class = "col-md-3">
+	 			{{c.course_name}}
+	 		</div>
+	 		<div class = "col-md-3">
+	 			{{c.start_time}}
+	 		</div>
+	 		<div class = "col-md-3">
+	 			{{c.end_time}}
+	 		</div>
+	 		<div class = "col-md-3">
+	 			<input type ="button" (click)  ="deleteCourse(c._id)" value = 'delete' class ='btn btn-danger'/>
+	 			<br>
+	 		</div>
+ 		</div>
+ 	</div>
+
+ 

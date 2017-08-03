@@ -1,0 +1,20 @@
+<div ng-app = "" class="contianer-fluid" *ngFor = "let c of courses">
+    	<div class = "row">
+	 		<div class = "col-md-3">
+	 			{{c.teacher_name}}
+	 		</div>
+	 		<div class = "col-md-3">
+	 			{{c.course_name}}
+	 		</div>
+	 		<div class = "col-md-3">
+	 			{{c.start_time}}
+	 		</div>
+	 		<div class = "col-md-3">
+	 			{{c.end_time}}
+	 		</div>
+	 		<div class = "col-md-3">
+	 			<input type ="button" (click)  ="onRegisterCourse(c._id)" value = 'Register' class ='btn btn-default'/>
+	 			<br>
+	 		</div>
+ 		</div>
+ 	</div>
