@@ -15,6 +15,7 @@ import { HomeComponent } from './components/home/home.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { RegisterComponent } from './components/register/register.component';
 import { ProfileComponent } from './components/profile/profile.component';
+import {StudentComponent} from './components/student/student.component';
 
 
 import {ValidateService} from './services/validate.service'
@@ -29,7 +30,8 @@ const appRoutes:Routes = [
   {path : 'login', component : LoginComponent},
   {path : 'dashboard', component : DashboardComponent, canActivate:[AuthGuard]},
   {path : 'profile', component : ProfileComponent, canActivate:[AuthGuard]},
-  {path : 'api/teacher/courses', component : CoursesComponent}
+  {path : 'api/teacher/courses', component : CoursesComponent},
+  {path : 'api/student/courses', component : StudentComponent}
 
 ]
 @NgModule({
@@ -41,7 +43,8 @@ const appRoutes:Routes = [
     HomeComponent,
     DashboardComponent,
     RegisterComponent,
-    ProfileComponent
+    ProfileComponent,
+    StudentComponent
   ],
   imports: [
     BrowserModule,

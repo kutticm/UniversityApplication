@@ -17,6 +17,9 @@ export class StudentComponent implements OnInit {
   user :User;
   students : Student[];
   student : Student;
+  student_id : string;
+  student_name : string;
+  
 
   constructor(
   private courseService : CourseService,
@@ -24,7 +27,7 @@ export class StudentComponent implements OnInit {
  	 private router :Router
   ) { }
 
-  	ngOnInit(){
+  ngOnInit(){
 		this.courseService.getCourses()
 			.subscribe(courses => this.courses=courses);
 
@@ -40,6 +43,16 @@ export class StudentComponent implements OnInit {
 
   onRegisterCourse(id){
     console.log('registerCourse');
+    this.authService.registerStudentCourse(id).subscribe(data => {
+    if(data.success){
+      console.log('Student registered course');
+    }else{
+      console.log(data.msg);
+      return false;
+    }
+    });
+
+
   }
 
 }

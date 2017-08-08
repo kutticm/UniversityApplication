@@ -19,8 +19,9 @@
             <li *ngIf="!authService.loggedIn()"><a [routerLink]="['/register']">Register</a></li>
             <li *ngIf="authService.loggedIn()"><a [routerLink]="['/dashboard']">Dashboard</a></li>
             <li *ngIf="authService.loggedIn()"><a [routerLink]="['/profile']">Profile</a></li>
-            <li *ngIf="authService.loggedIn()"><a [routerLink]="['/api/teacher/courses']">Courses</a></li>
             <li *ngIf="authService.loggedIn()"><a (click)="onLogoutClick()" href="#">LogOut</a></li>
+            <li *ngIf="authService.loggedIn() && authService.isTeacher()"><a [routerLink]="['/api/teacher/courses']">Teacher Courses</a></li>
+            <li *ngIf="authService.loggedIn() && authService.isStudent()"><a [routerLink]="['/api/student/courses']">Student Courses</a></li>
 
           </ul>
 
